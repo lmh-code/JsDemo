@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Generator</title>
+</head>
+<body>
+  <script type="text/javascript">
+    // generator函数
+    // 语法如下
+    function * show() {
+      yield '我的名字';
+      yield '是：';
+      yield '呼呼';
+      return "我的名字是：呼呼"
+    }
+
+    console.log(show())
+    let s1 = show()
+    console.log("s1:", s1.next())
+    console.log("s2:", s1.next())
+    console.log("s3:", s1.next())
+    console.log("s4:", s1.next())
+
+
+    for(let genItem of show()) {
+      console.log("genItem:", genItem)
+    }
+
+    let [a, b, c ,d] = show()
+    console.log(a, b, c, d)
+
+    console.log("...show():", ...show())
+
+    console.log("Array.from(show()):", Array.from(show()))
+  </script>
+</body>
+</html>

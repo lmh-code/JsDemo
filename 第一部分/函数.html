@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>函数</title>
+  <link rel="stylesheet" href="">
+</head>
+<body>
+  <script type="text/javascript">
+    window.onload = function() {
+      // 1、 默认参数
+      // let show = (a='你好', b="刘明豪") => {
+      //   console.log("a:", a)
+      //   console.log("b:", b)
+      //   let str = `${a},我是${b}!`
+      //   console.log(str)
+      // }
+      // show(undefined,'夷陵老祖')
+
+      // 2、函数参数中的字段默认已经定义了，不能在使用let或者const定义和参数名一样的字段
+      // let myFun = (_a = 'mo ren') => {
+      //   let _a = '你好'
+      //   console.log(_a) // 报错
+      // }
+      // myFun()
+      
+      // 3、函数中的扩展运算符 ...
+      // let arr = ['apple', 'banana', 'orange']
+      // console.log("arr:", arr)
+      // console.log("...arr", ...arr)
+
+      // 4、... 运算符的重置和扩展
+      // let myFun = (..._params) => {
+      //   console.log("_params:", _params) // 重置 变为 [{name: "mingzi", sex: "xingbie", age: "12"}] 
+      //   console.log("..._params:", ..._params) // 将已经重置为数组的数组进行扩展为对象  {name: "mingzi", sex: "xingbie", age: "12"}
+      // }
+      // myFun({
+      //   name: 'mingzi',
+      //   sex: 'xingbie',
+      //   age: '12'
+      // })
+
+      // 5、对象不能使用 ...运算符 会报错：Uncaught TypeError: Found non-callable @@iterator
+      // console.log(...{
+      //   name: 'mingzi',
+      //   sex: 'xingbie',
+      //   age: '12'
+      // })
+      
+      // 6、arguments 的问题
+      // function myFun() {
+      //   console.log("arguments:", arguments) //  [10, 2, 5, -2, 4, callee: ƒ, Symbol(Symbol.iterator): ƒ]
+      //   let a = Array.prototype.slice.call(arguments)
+      //   return a
+      // }
+      // function sortNum(a, b) {
+      //   return a - b; // 从小到大排序
+      //   // return a - b; // 从大到小排序
+      // }
+      // console.log(myFun(10,2,5,-2,4).sort(sortNum))
+
+      // es6 数组去重
+      // console.log("Array.from(new Set([1,2,5,2,1,4,2,5])):", Array.from(new Set([1,2,5,2,1,4,2,5])))
+    }
+  </script>
+</body>
+</html>

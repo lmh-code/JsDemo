@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>模块化</title>
+</head>
+<body>
+  <script type="module">
+    // 模块化  
+    //   js不支持模块化
+    //       ruby            require
+    //       python          import
+    //   在ES6之前， 社区也定制了一套模块化规范  
+    //       Common.js                                    主要用于服务端  nodeJs   require('http')
+    //       AMD             requireJs, curlJs            主要用于客户端
+    //       CMD             seaJs                        主要用于客户端
+    //       
+    //    模块化  主要内容主要记住以下两点：
+    //    a) 如何定义模块
+    //    b) 如何使用
+    
+    // import 特点:
+    //        1、import可以是相对路径也可以是绝对路径
+    //        2、import 不管引入多少次  都相当于引入一次
+    //        3、import './Modules/modeOne.js'  如果这样用相当于直接引入文件
+    import * as modeOnes from './Modules/modeOne.js'  // 这样是直接引入文件
+    console.log("moduleOnes.a:", modeOnes.a)
+    console.log("moduleOnes.b:", modeOnes.b)
+    console.log("moduleOnes.getSum:", modeOnes.getSum(5, 9))
+
+    import moduleTwos from './Modules/modeTwo.js'
+    console.log("moduleTwos:", moduleTwos)
+  </script>
+</body>
+</html>

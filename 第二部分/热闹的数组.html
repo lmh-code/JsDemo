@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>热闹的数组</title>
+  <link rel="stylesheet" href="">
+</head>
+<body>
+  <script type="text/javascript">
+    // arrayList.forEach(functiono (item, index, arr) {}, 'this指向谁') // 循环  类似for循环
+    // arrayList.map()
+    // arrayList.filter()
+    // arrayList.every() 
+    // arrayList.some()  // 参数同第一个
+    let arrayList = ['apple', 'orange', 'pear']
+
+    let resData = [
+      {
+        value: 1,
+        label: '已备货'
+      },
+      {
+        value: 2,
+        label: '骑手已接单'
+      },
+      {
+        value: 3,
+        label: '已送达'
+      }
+    ]
+    // 1、for 循环 
+    // arrayList.keys()
+    // arrayList.entries()
+    
+    // for (let i = 0; i < arrayList.length; i++) {
+    //   console.log(arrayList[i])
+    //   document.write(`${arrayList[i]},`)
+    // }
+
+    // for (let item of arrayList) {
+    //   console.log(item)
+    //   document.write(`${item},`)
+    // }
+
+    for (let itemKey of arrayList.keys()) {
+      console.log(itemKey)
+      document.write(`${itemKey},`)
+    }
+
+    for(let itemAll of arrayList.entries()) {
+      console.log(itemAll)
+    }
+
+    for(let [key, item] of arrayList.entries()) {
+      console.log(key, item)
+    }
+
+    // 2、forEach
+    // arrayList.forEach((item, index, arr) => {
+    //   // console.log("item", item)
+    //   // console.log("index", index)
+    //   // console.log("arr", arr)
+    //   // es6 中这里的 this 指向的是定义的当前函数所在的对象
+    //   console.log(this, item, index , arr)
+    // }, 123)
+    // arrayList.forEach(function(item, index, arr) {
+    //   // 普通函数中的这里的this指向的是你参数中定义的要修改的this
+    //   if(index === 2) {
+    //     this[index] = '2'
+    //   }
+    //   console.log(this, item, index , arr)
+    // }, arrayList)
+   
+
+
+     // 3、map() 函数返回新数组  主要用于重新整理数据
+     // 没有返回值的时候相当于 forEach
+     // 有返回值的时候就是得到的新数组
+     // let newArr = resData.map((item, index, arr) => {
+     //   console.log(item, index, arr)
+     //   let formaterVal = {}
+     //   formaterVal.zhi = item.value
+     //   formaterVal.str = item.label
+     //   return formaterVal
+     // })
+     // console.log("newArr:", newArr)
+
+
+
+      // 4、filter() 该函数主要用于过滤一些不合格的元素   如果回调函数返回到的是一个true   就留下来
+      // let returnVal = resData.filter((item, index, arr) => {
+      //   console.log(item, index, arr)
+      //   return item.value === 2
+      // });
+      // console.log("returnVal:", returnVal)
+      
+
+
+      // 5、 some()  // 只要有一个满足就会返回 trueu
+      // let returnVal = resData.some((item, index, arr) => {
+      //   console.log(item, index, arr)
+      // })
+      // console.log(returnVal)  // false 因为没有return
+
+      // let returnVal1 = arrayList.some((item,index,arr) => {
+      //   return item === 'apple'
+      // })
+      // console.log(returnVal1) // true 因为有return并且有等于的值
+      
+      // let findInArr = (_arr, _val) => {
+      //   return _arr.some((item, index, arr) => {
+      //     return item === _val
+      //   })
+      // }
+      // console.log(findInArr(arrayList, 'apple'))
+      
+
+
+      // 6、 every() 必须是所有的都满足才会返回true
+      // let returnVal2 = arrayList.every((item, index, arr) => {
+      //   console.log(item, index, arr)
+      //   return item === 'apple'
+      // })
+      // console.log(returnVal2) // false 只有一个满足条件所以返回false
+
+      // let returnVal3 = arrayList.every((item, index, arr) => {
+      //   console.log(item, index, arr)
+      //   return item === 'apple' || item === 'orange' || item === 'pear'
+      // })
+      // console.log(returnVal3) // true   全部都满足条件  所以返回true
+      
+
+      // 7、reduce()  从左向右计算
+      // let arr = [1,2,3,4,5,6,7,8,9,10]
+
+      // let sum = 0
+      // arr.forEach((item) => {
+      //   sum+=item
+      // })
+      // console.log("sum:", sum) // 55
+
+      // let sum1 = 0
+      // let sumVal = arr.map((item1) => {
+      //   sum1+=item1;
+      //   return sum1;
+      // })
+      // console.log("sumVal:", sumVal) // 返回的是数组
+      // let sum2 = arr.reduce((pre,cur,index,arr) => {
+      //   return pre+cur
+      // })
+      // console.log(sum2)
+
+      // 8、reduce.right()   从右向左计算
+      
+      let arr = [2,2,3]
+      console.log(arr.reduce((pre, cur, index, arr) => {
+        // return pre**cur
+        return Math.pow(pre, cur)
+      }))
+
+      console.log(arr.reduceRight((pre, cur, index, arr) => {
+        // return pre**cur
+        return Math.pow(pre, cur)
+      }))
+  </script>
+</body>
+</html>

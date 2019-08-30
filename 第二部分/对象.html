@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>对象</title>
+  <link rel="stylesheet" href="">
+</head>
+<body>
+  <script type="text/javascript">
+    // 1、 对象的简洁语法
+    let name = '对象'
+    let age = '12'
+    let json = {
+      name,
+      age,
+      showName() {
+        return this.name
+      },
+      showAge() {
+        return this.age
+      }
+    }
+    console.log(json)
+    console.log(json.showName(), json.showAge())
+
+    let x = 10;
+    let y = 20;
+    function showXY({x: _x, y: _y}) {
+      console.log(_x, _y)
+    }
+    showXY({x, y})
+
+
+    // 2、 Object.is() 用来比较两个东西是否相等
+    console.log("Object.is(+0, -0):", Object.is(+0, -0))
+    console.log("+0 === -0:", +0 === -0)
+
+    console.log("Object.is(NaN, NaN):", Object.is(NaN, NaN))
+    console.log("NaN === NaN:", NaN === NaN)
+
+
+    // 3、 Object.assign() 用来合并对象   克隆对象    适用于对象和数组
+    // let newObject = Object.assign('target 目标对象' , 'source1', 'source1', ...)
+    let json1 = {a: 1}
+    let json2 = {b: 2}
+    let json3 = {c: 3}
+
+    let newObject = Object.assign({}, json, json1, json2, json3)
+    console.log("newObject:", newObject)
+    
+    let arr = [1,3,4]
+    let newArr = Object.assign([], arr)
+    newArr.push(5)
+    console.log("newArr:", newArr)
+    console.log("arr:", arr)
+
+    // 4、 Object.keys(), Object.entries()., Object.values()
+    let {keys, values, entries} = Object
+    let json4  = {
+      a: 1,
+      b: 2,
+      c: 3
+    }
+
+    console.log("keys(json4):", keys(json4))
+    console.log("values(json4):", values(json4))
+    console.log("entriesv(json4):", entries(json4))
+  </script>
+</body>
+</html>

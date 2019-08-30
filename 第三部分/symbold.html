@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Symbol</title>
+</head>
+<body>
+  <script type="text/javascript">
+    // Symbol 数据类型  私有的
+    // Number String Boolean Object Function undefined
+    let a = Number(12)
+    console.log("a:", a)
+    
+    let b = Symbol("aaa")
+    console.log("b:", b)
+
+
+    let json = {
+      a: 12,
+      c: 1,
+      [b]: 15
+    }
+
+    console.log("json:", json)
+
+    for(let key in json) {
+      console.log(key)  // s b 
+      // Symbol(aaa)  不打印是因为Symbol是私有的，所以不能打印出来
+    }
+
+    let arr = [
+      {
+        a:  1,
+        b:  2
+      },
+      {
+        a:  1,
+        b:  2
+      },
+      {
+        a:  1,
+        b:  2
+      },
+      {
+        a:  1,
+        b:  2
+      }
+    ]
+
+    for(let [key,item] of arr.entries()) {
+      console.log(key, item)
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>字符串模板</title>
+</head>
+<body>
+  <script type="text/javascript">
+    window.onload = function () {
+      // // 一、  字符串模板
+      // let data = [
+      //   {
+      //     name: 't',
+      //     age: 1
+      //   },
+      //   {
+      //     name: 's',
+      //     age: 2
+      //   },
+      //   {
+      //     name: 'd',
+      //     age: 3
+      //   }
+      // ]
+      // let myUl = document.getElementById('myUl')
+      // for(let item of data) {
+      //   let myLi = document.createElement('li')
+      //   myLi.innerHTML = `我的名字叫：${item.name},我的年龄是：${item.age}!`
+      //   myUl.appendChild(myLi)
+      // }
+      
+      // 二、 检查字符串中的内容
+      // 1、 indexOf  返回索引位置
+      // let str = 'apple banana pear'
+      // if(str.indexOf('apple') !== -1) {
+      //   alert(true)
+      // }else {
+      //   alert(false)
+      // }
+
+      // 2、includes 返回的是true或者false
+      // let str = 'apple banana pear'
+      // alert(str.includes('banana'))
+      // console.log(navigator.userAgent)
+      // if(navigator.userAgent.includes('Chrome')) {
+      //   console.log(true)
+      // }else {
+      //   console.log(false)
+      // }
+      
+      // 3、 startsWith() 检测根据什么开头 endsWith() 根据什么结尾
+      let str1 = '127.0.0.1'
+      let str2 = 'https://www.baidu.com'
+      let str3 = 'name.png'
+
+      console.log("str1.startsWith('1'):", str1.startsWith('1'))
+      console.log("str1.startsWith('http'):", str1.startsWith('http'))
+
+      console.log("str2.startsWith('1'):", str2.startsWith('1'))
+      console.log("str2.startsWith('http'):", str2.startsWith('http'))
+
+      console.log("str3.endsWith('.png'):", str3.endsWith('.png'))
+
+      // 4、repeat() 重复字符串几次
+      console.log("字符串重复".repeat(5))
+
+      // 5、填充字符串   padStart('总字符串长度', '填充的内容'),padEnd()
+      let str = '一个字符串'
+      let padStr = 'wo shi yao tian chong de nei rong !'
+      console.log(str.padStart(str.length + padStr.length, padStr))
+      console.log(str.padEnd(str.length + padStr.length, padStr))
+    }
+  </script>
+</body>
+  <ul id="myUl">
+    
+  </ul>
+</html>

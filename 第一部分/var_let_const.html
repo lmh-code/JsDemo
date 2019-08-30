@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>var\let\const定义变量之间的区别</title>
+</head>
+<body>
+  <script>
+    // 一、var定义变量
+    // 1、变量声明提升
+    // a = 5;
+    // var a;
+    // console.log(a)
+
+    // 2、变量就近原则
+    // var a = 5;
+    // function fun() {
+    //   alert(a); // undefined   
+    //   var a = 12;
+
+    //   // 以上两行相当于下边三行
+      
+    //   // var a;
+    //   // alert(a);
+    //   // a = 12;
+    // }
+    // fun();
+    
+
+    // 二、let和const   
+    // let 相当于var 定义变量 
+    // const  定义常量  一般不会变的用const定义   
+    // let 和 const 都具有块级作用域
+    // {}, if , for ， while函数都具有块级作用域
+    // let和const不具有变量提升，var具有变量提升特性 
+    
+    // 覆盖
+    // var a = 12;
+    // var a = 5;
+    // alert(a)
+    
+    // 浏览器报错  原因  let定义变量属于块级作用域，不能重复定义
+    // let a = 12;
+    // let a = 5;
+    // alert(a)
+
+    // for(let i = 0; i < 3; i++) {
+    //   // 我们都知道 let 在同一个作用域中不能重复定义，但是此种情况不会报错会输出三次 abc
+    //   // 原因是 for 循环中（）、{} 里边分别相当于一块，（）相当于父级
+    //   let i = 'abx'
+    //   console.log(i)
+    // }
+    // 
+    
+    // {
+    //   let a = 12;
+    //   {
+    //     let a = 5;
+    //     {
+    //       let a =  3;
+    //       console.log(a)
+    //     }
+    //     console.log(a);
+    //   }
+    //   console.log(a);
+    // }
+    
+
+    // window.onload =  function() {
+    //   var inputs = document.querySelectorAll('input')
+    //   for(let i = 0;  i < inputs.length; i++) {
+    //     inputs[i].onclick = function () {
+    //       alert(i)
+    //     }
+    //   }
+    // }
+     
+
+     // 因为对象都是引用类型的，所以对象是可以添加和修改值得
+    // const arr = ['apple', 'origion']
+    // arr[0] = '1'
+    // arr.push('tiger')
+    // console.log(arr)
+    
+    // const testObj = {
+    //   a: 12,
+    //   b: 5
+    // }
+    // testObj = false
+    // console.log(testObj) 
+    
+
+    // 如果想定义一个不可以修改的死的常量  可以使用 Object.freeze()
+    // const arr = Object.freeze([1,2])
+    // arr.push(3)
+    // console.log(arr) 
+
+
+    
+    
+    // 报错 常量不可以修改
+    // const a = 12;
+    // a = 5;
+    // console.log(a)
+  </script>
+
+  <!-- <input type="button" name="" value="输出0">
+  <input type="button" name="" value="输出1">
+  <input type="button" name="" value="输出2"> -->
+</body>
+</html>

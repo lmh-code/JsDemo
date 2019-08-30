@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv=Content-Type content="text/html; charset=utf-8">
+  <title>解构赋值</title>
+</head>
+<body>
+  <script type="text/javascript">
+    // 一、定义变量
+    // let [a, b, c] = [2, 3, 4]
+    // console.log(a,b,c)
+
+    // let [e, [f, g]] = [2, [3, 4]]
+    // console.log(e, f, g)
+
+    // let [h, i] = [2, [3, 4]]
+    // console.log(h, i)
+
+
+    // 二、解构json数据
+    // 1、 基本解构和冒号表示重新给字段命名
+    // let json = {
+    //   name: 'xiaoxiao',
+    //   age: 12,
+    //   sex: 'man'
+    // }
+    // // let {name, age, sex} = json
+    // // console.log(name, age, sex)
+
+    // let {name: n, age: ag, sex: s} = json
+    // console.log(n, ag, s)
+    
+    // 2、等号表示给字段赋初始值
+    // let json = {
+    //   name: 'huhu',
+    //   age: 1
+    // }
+    // let {name, age, sex='man'} = json
+    // console.log(name, age, sex)
+    
+    // es6 字段交换数值
+    // let a = 5;
+    // let b = 12;
+    // 或者
+    // let [a, b] = [5, 12];
+    // [a, b] = [b, a];
+    // console.log(a, b);
+   
+  </script>
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>闭包1</title>
+</head>
+<body>
+  <script type="text/javascript">
+    // （1）个人理解  闭包就是能够读取其它函数内部变量的一个函数
+    // 闭包最大的作用是：
+    // 1、可以获取其它函数内部的变量的值
+    // 2、可以让这些变量的值始终保存在内存中
+
+    // // 1、 Javascript语言的特殊之处，就在于函数内部可以直接读取全局变量。
+    // var n = 999
+    // function showN () {
+    //   console.log("n", n)
+    // }
+    // showN()
+
+    // // 2、 在函数外部自然无法读取函数内的局部变量。
+    // function showB () {
+    //   var b = 12
+    //   console.log("内部显示B:", b)
+    // }
+    // showB()
+    // console.log("外部显示B:", b)
+    
+    // // 3、函数内部声明变量的时候，一定要使用var命令。如果不用的话，你实际上声明了一个全局变量！
+    // function show () {
+    //   n = 999
+    //   console.log("内部显示N：", n)
+    // }
+    // show()
+    // console.log("外部显示N：", n)
+    // console.log("this.n:", this.n)
+    // 
+    
+    // 4 、闭包初步体验
+    // function f1 () {
+    //   var n = 999
+    //   function f2 () {
+    //     console.log("n:", n)
+    //   }
+    //   return f2
+    // }
+
+    // var rseultVal = f1()
+    // rseultVal()
+    
+
+    // function f1 () {
+    //   let a = 12
+    //   function f2 () {
+    //     console.log("a:", a)
+    //   }
+    //   return f2
+    // }
+    // let resVal = f1()
+    // resVal()
+    
+
+    // function f1 () {
+    //   var n = 999
+    //   nAdd = function() {
+    //     n+=1
+    //   }
+    //   function f2 () {
+    //     console.log("n:", n)
+    //   }
+
+    //   return f2
+    // }
+
+    // let show = f1()
+    // show()
+    // nAdd()
+    // setTimeout(() => {
+    //   show()
+    // }, 1000)
+    
+    var name = "The Window";
+    var object = {
+　　　　name : "My Object",
+
+　　　　getNameFunc : function(){
+　　　　　　return function(){
+　　　　　　　　return this.name;
+　　　　　　};
+        // console.log("name:", name)
+        // console.log("this.name:", this.name)
+　　　　}
+　　};
+    console.log("object.getNameFunc()():", object.getNameFunc().apply(object))
+    console.log("object.getNameFunc()():", object.getNameFunc()())
+    console.log("this.name:", this.name)
+    console.log("this.object:", this.object)
+    console.log("this.object.name:", this.object.name)
+  </script>
+</body>
+</html>

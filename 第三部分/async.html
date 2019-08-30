@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>async和await</title>
+</head>
+<body>
+  <script type="text/javascript">
+    /**
+     * @description: async和await 测试使用
+     * @param {type} 
+     * @return: 
+     */
+    async function testAsync(flag) {
+      if(flag) {
+        return `成功了：flag的值为：${flag}`
+      }else {
+        return `失败了：flag的值为：${flag}`
+      }
+      
+    }
+    console.log(testAsync())
+    testAsync(true).then(res => {
+      console.log("testAsync(true)res:", res)
+    }).catch(err => {
+      console.log("testAsync(true)err:", err)
+    })
+    testAsync(false).then(res => {
+      console.log("testAsync(false)res:", res)
+    }).catch(err => {
+      console.log("testAsync(false)err:", err)
+    })
+    console.log("我在后面但是我先执行了！")
+
+    /**
+     * 求和
+    */
+    function sum(a, b) {
+      return new Promise((resolve, reject) => {
+        setTimeout(() => {
+          resolve(a + b)
+        }, 2000);
+      })
+    }
+    /**
+     * @description: 异步获取
+     * @param {type} 
+     * @return: 
+     */
+    async function getSum() {
+      let a = await sum(1, 2)
+      console.log(a)
+    }
+
+    getSum()
+  </script>
+
+
+  <div>
+
+  </div>
+  <a href=""></a>
+  <img src="" alt="">
+</body>
+</html>
